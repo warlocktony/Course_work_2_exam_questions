@@ -1,4 +1,4 @@
-package com.warlocktony.Course_work_2_exam_questions.Service;
+package com.warlocktony.Course_work_2_exam_questions.service;
 
 import com.warlocktony.Course_work_2_exam_questions.DTO.Question;
 import com.warlocktony.Course_work_2_exam_questions.Exception.QuestionAlreadyAddedException;
@@ -9,11 +9,14 @@ import java.util.*;
 @Service
 public class JavaQuestionService implements QuestionService {
     private final Set<Question> questions;
-
+    private final Random random;
 
     public JavaQuestionService() {
+
         this.questions = new HashSet<>();
+        this.random = new Random();
     }
+
 
     @Override
     public Question add(String question, String answer) {
@@ -68,8 +71,8 @@ public class JavaQuestionService implements QuestionService {
 
 
         int qSize = questions.size();
-        Random r = new Random();
-        int rand = r.nextInt(qSize);
+
+        int rand = random.nextInt(qSize);
         Question result;
         Object[] q = questions.toArray();
         Object x = q[rand];

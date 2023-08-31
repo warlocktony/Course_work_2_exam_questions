@@ -1,12 +1,13 @@
 package com.warlocktony.Course_work_2_exam_questions.DTO;
 
+import java.util.HashSet;
 import java.util.Objects;
-
+import java.util.Set;
 
 
 public class Question{
-    private String question;
-    private String answer;
+    private final String question;
+    private final String answer;
 
     public Question(String question, String answer){
         this.question=question;

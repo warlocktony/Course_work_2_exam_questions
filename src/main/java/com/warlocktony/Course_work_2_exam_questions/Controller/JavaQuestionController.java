@@ -1,7 +1,7 @@
 package com.warlocktony.Course_work_2_exam_questions.Controller;
 
 import com.warlocktony.Course_work_2_exam_questions.DTO.Question;
-import com.warlocktony.Course_work_2_exam_questions.Service.QuestionService;
+import com.warlocktony.Course_work_2_exam_questions.service.QuestionService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/exam/java")
+@RequestMapping("/java")
 public class JavaQuestionController {
     public final QuestionService questionService;
 

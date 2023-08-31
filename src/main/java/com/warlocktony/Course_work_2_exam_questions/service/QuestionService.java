@@ -1,9 +1,8 @@
-package com.warlocktony.Course_work_2_exam_questions.Service;
+package com.warlocktony.Course_work_2_exam_questions.service;
 
 import com.warlocktony.Course_work_2_exam_questions.DTO.Question;
 
 import java.util.Collection;
-import java.util.Random;
 
 public interface QuestionService {
     Question add(String question, String answer);
