@@ -42,15 +42,7 @@ public class JavaQuestionService implements QuestionService {
             return que;
     }
 
-//    @Override
-//    public Question remove(Question question) {
-//        boolean result = questions.remove(question);// true если элемент был
-//        // false если элемента нет
-//        if (!result) {
-//            throw new QuestionNotFoundException("question not found");
-//        }
-//        return question;
-//    }
+
 
     @Override
     public Collection<Question> getAll() {
@@ -59,16 +51,6 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Question getRandomQuestion() {
-//        int i = 0;
-//        int qSize = questions.size();
-//        Random r = new Random();
-//        int rand = r.nextInt(qSize);
-//        for (Question q : questions) {
-//            if (i == rand)
-//                return q;
-//            i++;
-//        }
-
 
         int qSize = questions.size();
 
@@ -78,6 +60,6 @@ public class JavaQuestionService implements QuestionService {
         Object x = q[rand];
         result = (Question) x;
         return result;
-//        return (Question) questions.toArray()[new Random().nextInt(questions.size())];
+
     }
 }

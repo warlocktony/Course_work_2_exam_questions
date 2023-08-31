@@ -14,12 +14,12 @@ import java.util.Collection;
 public class ExamController {
     public final ExaminerService examinerService;
 
-    public ExamController(ExaminerService examinerService){
+    public ExamController(ExaminerService examinerService) {
         this.examinerService = examinerService;
     }
 
     @GetMapping("/questions")
-    public Collection<Question> getQuestions(@RequestParam int amount){
+    public Collection<Question> getQuestions(@RequestParam int amount) {
         return examinerService.getQuestions(amount);
     }
 

@@ -5,21 +5,24 @@ import java.util.Objects;
 import java.util.Set;
 
 
-public class Question{
+public class Question {
     private final String question;
     private final String answer;
 
-    public Question(String question, String answer){
-        this.question=question;
-        this.answer=answer;
+    public Question(String question, String answer) {
+        this.question = question;
+        this.answer = answer;
 
     }
-    public String getQuestion(){
+
+    public String getQuestion() {
         return question;
     }
-    public String getAnswer(){
+
+    public String getAnswer() {
         return answer;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -27,10 +30,12 @@ public class Question{
         Question questions = (Question) o;
         return Objects.equals(question, questions.question) && Objects.equals(answer, questions.answer);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(question, answer);
     }
+
     @Override
     public String toString() {
         return question + " " + answer;

@@ -18,7 +18,7 @@ public class JavaQuestionController {
         this.questionService=questionService;
     }
 
-    //Почему и как метод указывает на интерфейс, а не на реализацию?
+
     @GetMapping("/add")
     public Question add(@RequestParam String question, @RequestParam String answer){
         return questionService.add(question, answer);

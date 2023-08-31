@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
+
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Collection;
@@ -26,26 +27,27 @@ public class ExaminerServiceImplTest {
 
     @InjectMocks
     ExaminerServiceImpl underTest;
-    Question question1 = new Question("q1","a1");
-    Question question2 = new Question("q2","a2");
+    Question question1 = new Question("q1", "a1");
+    Question question2 = new Question("q2", "a2");
 
     @Test
-    void getQuestions_enoughQuestionsInSet_setOfQuestionsReturned(){
+    void getQuestions_enoughQuestionsInSet_setOfQuestionsReturned() {
         int amount = 2;
         when(questionService.getAll()).thenReturn(Set.of(question1, question2));
 
         Collection<Question> result = underTest.getQuestions(amount);
 
-        assertEquals(amount,result.size());
+        assertEquals(amount, result.size());
 
     }
+
     @Test
-    void getQuestions_notEnoughQuestionInSet_throwQuestionLimitExceededException(){
+    void getQuestions_notEnoughQuestionInSet_throwQuestionLimitExceededException() {
         int amount = 1;
         when(questionService.getAll()).thenReturn(Collections.emptyList());
         QuestionLimitExceededException ex = assertThrows(QuestionLimitExceededException.class,
                 () -> underTest.getQuestions(amount));
-        assertEquals("question limit exceeded",ex.getMessage());
+        assertEquals("question limit exceeded", ex.getMessage());
 
     }
 
