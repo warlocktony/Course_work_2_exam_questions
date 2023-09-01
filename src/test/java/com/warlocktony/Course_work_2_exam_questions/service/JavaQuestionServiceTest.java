@@ -44,8 +44,8 @@ public class JavaQuestionServiceTest {
 
     @Test
     void remove__questionAddedAndRemoved() {
-        underTest.add(question1.getQuestion(), question1.getAnswer());
-        Question result = underTest.remove(question1.getQuestion(), question1.getAnswer());
+        underTest.add(question1);
+        Question result = underTest.remove(question1);
 
         assertFalse(underTest.getAll().contains(question1));
         assertEquals(question1, result);
@@ -55,7 +55,7 @@ public class JavaQuestionServiceTest {
     void remove_questionIsNotInSet_throwQuestionNotFoundException() {
         QuestionNotFoundException ex =
                 assertThrows(QuestionNotFoundException.class,
-                        () -> underTest.remove("q", "a"));
+                        () -> underTest.remove(question1));
         assertEquals("question not found", ex.getMessage());
 
     }

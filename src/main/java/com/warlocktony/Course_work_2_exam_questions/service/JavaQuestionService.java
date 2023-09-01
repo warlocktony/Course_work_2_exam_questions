@@ -32,14 +32,14 @@ public class JavaQuestionService implements QuestionService {
         return question;
     }
     @Override
-    public Question remove(String question, String answer){
-            Question que = new Question(question,answer);
-            boolean q = questions.remove(que);
+    public Question remove(Question question){
+
+            boolean q = questions.remove(question);
             if(!q){
                 throw new QuestionNotFoundException("question not found");
 
             }
-            return que;
+            return question;
     }
 
 
